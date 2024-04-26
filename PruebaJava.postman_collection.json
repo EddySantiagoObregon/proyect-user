@@ -1,0 +1,40 @@
+{
+	"info": {
+		"_postman_id": "99b2a992-5aaa-487d-811d-603eae18aee7",
+		"name": "PruebaJava",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26045636"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Juan Rodriguez\",\r\n  \"email\": \"jsuan@gmail.com\",\r\n  \"password\": \"hunter2\",\r\n  \"phones\": [\r\n    {\r\n      \"number\": \"1234567\",\r\n      \"cityCode\": \"1\",\r\n      \"countryCode\": \"57\"\r\n    }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
