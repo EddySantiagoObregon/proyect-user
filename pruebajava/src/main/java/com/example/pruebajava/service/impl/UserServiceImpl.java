@@ -52,6 +52,8 @@ public class UserServiceImpl implements IUserService {
 
         user = userRepository.save(user);
         String token = jwtUtil.generateToken(user.getEmail());
+        user.setToken(token);
+        user = userRepository.save(user);
 
         RegisterUserResponseDTO responseDTO = new RegisterUserResponseDTO(
                 user.getId(),
@@ -63,6 +65,11 @@ public class UserServiceImpl implements IUserService {
         );
 
         return responseDTO;
+    }
+
+    @Override
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
     }
 
     private boolean isValidEmail(String email){
